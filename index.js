@@ -16,6 +16,7 @@ for (const file of commandFiles) {
 }
 
 client.once(Events.ClientReady, () => {
+    client.user.setUsername("CharBot");
     console.log('Ready!');
 });
 

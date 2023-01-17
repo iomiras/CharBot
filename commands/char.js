@@ -20,9 +20,10 @@ module.exports = {
         await interaction.reply(`changed to ${global.characterToPlay}`);
 
 
+        const botMember = await interaction.client.guilds.cache.first().members.fetch(interaction.client.user);
         try {
-            await interaction.client.user.setUsername(global.characterToPlay);
-            console.log(`Changed username to ${interaction.client.user.username}`);
+            await botMember.setNickname(global.characterToPlay);
+            console.log(`Changed nickname to ${botMember.nickname}`);
         } catch (error) {
             console.log(error);
         }

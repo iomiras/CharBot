@@ -55,7 +55,7 @@ module.exports = {
                 });
                 // console.log("reply js", interaction.client.user.username);
                 await wait(4000);
-                await interaction.editReply(interaction.user.tag + ": " + sentence + "\n" + response.data.choices[0].text);
+                await interaction.editReply(`<@${interaction.user.id}>` + ": " + sentence + response.data.choices[0].text);
 
             } catch (err) {
                 console.log(err);
